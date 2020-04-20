@@ -1,8 +1,10 @@
 <?php
 session_start();
 
-require 'config.php';
-require 'vendor/autoload.php';
+//print_r(PDO::getAvailableDrivers());
+error_reporting(-1);
+require './config.php';
+require './vendor/autoload.php';
 
 $core = new Core\Core();
 $core->run();
