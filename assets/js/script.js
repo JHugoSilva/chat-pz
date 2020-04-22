@@ -27,6 +27,7 @@ function fecharModal() {
 }
 
 $(function(){
+    chat.chatActivity()
     $('.add_tab').on('click', function(){
 
         var html = '<h3>Nova Janela de Bate Papo</h3>'
@@ -58,5 +59,14 @@ $(function(){
     $('nav ul').on('click', 'li', function(){
         var id = $(this).attr('data-id')
         chat.setActiveGroup(id)
+    })
+
+    $('#sender_input').on('keyup', function(e) {
+        //console.log(e.keyCode)
+        if(e.keyCode == 13){
+            var msg = $(this).val()
+            $(this).val('')
+            chat.sendMessage(msg)
+        }
     })
 })

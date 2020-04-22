@@ -82,7 +82,7 @@ class Users extends Model
                 return false;
             }
         } catch (\PDOException $error) {
-                throw new Exception($error);
+                echo $error;
         }
     }
 
